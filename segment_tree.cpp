@@ -32,8 +32,8 @@ ll range_query(ll i,ll start,ll end,ll arstart,ll arend)
         return seg[i];
     }
     ll mid=(start+end)/2;
-    ll ans1=range_query(2*i+1,start,mid,arstart,min(arend,mid));
-    ll ans2=range_query(2*i+2,mid+1,end,max(arstart,mid+1),arend);
+    ll ans1=range_query(2*i+1,start,mid,arstart,arend);
+    ll ans2=range_query(2*i+2,mid+1,end,arstart,arend);
     return max(ans1,ans2);
 }
 
